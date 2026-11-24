@@ -1,0 +1,55 @@
+---
+title: "First Demo Quarto Doc"
+author: "Martina Longhin"
+format: html
+editor: visual
+---
+
+## First Section
+
+```{r}
+library(dplyr)
+seq(1, 10) |> 
+  sum()
+```
+
+```{r}
+#| warning: false
+library(ggplot2)
+ggplot(airquality, aes(Temp, Ozone)) +
+  geom_point() +
+  geom_smooth(method = "loess")
+```
+
+### Demo code values in text
+
+```{r}
+ num_students <- 197
+ num_sections <- 8
+ num_students_per_section <- num_students / num_sections
+ 
+```
+
+i can make a paragraph with values in it like this:
+
+there are `r num_students` in class with `r num_sections` sections. so there are `r num_students_per_section` per section in this class.
+
+## Lecture Exercise 04
+
+Load fake student data
+
+```{r}
+fake_student_df <- read.csv("https://raw.githubusercontent.com/kylethayer/Info-201-au-24-datasets/refs/heads/main/demo_L03_fake_students.csv")
+```
+
+Load dplyr library
+
+```{r}
+library("dplyr")
+```
+
+Display summary of data
+
+```{r}
+summary(fake_student_df)
+```
